@@ -98,7 +98,7 @@ class AdminController extends Controller
         $id= $request->get('id');
         $val=$request->get('val');
         $field=$request->get('field');
-         $res=BannerModel::where('id',$id)->update(['is_no'=>$field]);
+         $res=BannerModel::where('id',$id)->update([$field=>$val]);
         if($res){
             return[
                 'code'=>'0000',
@@ -111,7 +111,8 @@ class AdminController extends Controller
         return view('admin.upload');
     }
     public function uploadadd(Request $request){
-        $fileinfo=$_FILES['filedata'];
+        $fileinfo=$_FILES['Filedata'];
+//        echo $fileinfo;die;
         $tmpName=$fileinfo['tmp_name'];
         $ext=explode(".",$fileinfo['name'])[1];
         $newFileName=md5(uniqid()).".".$ext;

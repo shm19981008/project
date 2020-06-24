@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
-<link rel="stylesheet" href="/css/uploadify.css">
+<link rel="stylesheet" href="/update/css/uploadify.css">
 <script src="/js/jquery.js"></script>
 <script src="/js/jquery.uploadify.js"></script>
 <style>

@@ -136,8 +136,8 @@ function del(){
 					dataType:'json',
 //					type:'post',
 					success:function(res){
-						var new_val=$(this).val();
-						console.log(res);
+						$(".hid").hide();
+						$(".is_no").show();
 					}
 				})
 			})
