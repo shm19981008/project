@@ -107,4 +107,21 @@ class AdminController extends Controller
             ];
         }
     }
+    public function upload(){
+        return view('admin.upload');
+    }
+    public function uploadadd(Request $request){
+        $fileinfo=$_FILES['filedata'];
+        $tmpName=$fileinfo['tmp_name'];
+        $ext=explode(".",$fileinfo['name'])[1];
+        $newFileName=md5(uniqid()).".".$ext;
+        $newFilePath="./uploads/".Date('Y/m/d/',time());
+        if(!is_dir($newFilePath)){
+            mkdir($newFilePath,0777,true);
+        }
+        $newFilePath=$newFilePath.$newFileName;
+        move_uploaded_file($tmpName,$newFilePath);
+        $newFilePath=ltrim($newFilePath,'.');
+        echo $newFilePath;
+    }
 }

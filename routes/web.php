@@ -29,3 +29,5 @@ Route::any('/cate/list','Admin\CateController@lists');
 Route::any('/cate/del','Admin\CateController@del');
 Route::any('/cate/update/{id}','Admin\CateController@update');
 Route::any('/cate/do_update','Admin\CateController@do_update');
+Route::any('/upload','Admin\AdminController@upload');
+Route::any('/uploadadd','Admin\AdminController@uploadadd');
